@@ -37,3 +37,27 @@
 //     else console.log('Result', files)
 // });
 
+// EVENT MODULE
+const EventEmitter = require('events'); //EventEmmiter is a class
+// class emitter extends EventEmitter {}
+
+const emitter = new EventEmitter();
+
+// NEW VERSION
+// emitter.on('event', () => {
+//     console.log('an event occured!');
+// });
+
+// OLD VERSION
+// Register a listener
+emitter.on('messageLogged', function(){
+    console.log('Listener called');
+})
+
+// Raise an event
+emitter.emit('messageLogged');
+
+
+
+
+
